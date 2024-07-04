@@ -2,10 +2,20 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('checkout') {
             steps {
-                echo 'Hello World'
+                echo 'this process is checkout'
             }
         }
+stage('build') {
+            steps {
+                echo 'this process is build sucess'
     }
+}
+stage('depoly') {
+            steps {
+                echo 'this process is depolying'
+}
+}
+}
 }
