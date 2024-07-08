@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Build') {
+            steps {
+                // Ensure npm dependencies are up-to-date
+                sh 'npm install'
+                
+                // Build your project (if applicable)
+                sh 'npm run build'
+                
+                // Run tests
+                sh 'npm test'
+                
+                // Publish package (example: publishing a package to npm registry)
+                sh 'npm publish'
+            }
+        }
+    }
+}
